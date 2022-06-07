@@ -27,3 +27,23 @@ data Person = Person { firstName :: String
 guy = Person "Buddy" "Finklestein" 43 184.2 "526-2928" "Chocolate"
 
 data Maybe  a = Nothing | Just a
+
+data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday 
+  deriving (Eq, Ord, Show, Read, Bounded, Enum)
+
+phoneBook :: [(String,String)]  
+phoneBook =      
+    [("betty","555-2938")     
+    ,("bonnie","452-2928")     
+    ,("patsy","493-2928")     
+    ,("lucille","205-2928")     
+    ,("wendy","939-8282")     
+    ,("penny","853-2492")     
+    ] 
+
+-- type PhoneBook = [(String, String)]
+type PhoneNumber = String 
+type Name = String 
+type PhoneBook = [(Name,PhoneNumber)]
+
+inPhoneBook name pnumber pbook = (name, pnumber) `elem` pbook
